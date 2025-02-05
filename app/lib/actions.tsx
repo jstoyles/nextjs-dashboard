@@ -12,9 +12,6 @@ export type State = {
     status?: string[];
   };
   message?: string | null;
-  customerId?: string[] | null;
-  amount?: string[] | null;
-  status?: string[] | null;
 };
 
 const FormSchema = z.object({
