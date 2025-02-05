@@ -14,7 +14,7 @@ import { useActionState } from 'react';
 
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
-  const initialState: State = { message: null, errors: {}, customerId: '', amount: null, status: '' };
+  const initialState: State = { message: null, errors: {}, customerId: null, amount: null, status: null };
   const [state, formAction] = useActionState(createInvoice, initialState);
 
   return (
@@ -30,7 +30,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               id="customer"
               name="customerId"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              defaultValue={state.customerId}
+              defaultValue={state.customerId==null?'':state.customerId}
               required
               aria-describedby="customer-error"
             >
